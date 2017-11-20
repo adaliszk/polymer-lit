@@ -1,0 +1,14 @@
+{
+  "name": "polymer-lit",
+  "version": "0.1.0",
+  "description": "Simple mixin for Polymer 3.x giving access to Lit-HTML.",
+  "main": "polymer-lit.js",
+  "repository": "git@github.com:adaliszk/polymer-lit.git",
+  "author": "Ádám Liszkai <adaliszk@gmail.com>",
+  "license": "MIT",
+  "flat": true,
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0-pre.1",
+    "lit-html": "^0.7.1"
+  }
+}
