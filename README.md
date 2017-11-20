@@ -1,5 +1,15 @@
-# Polymer LitHTML mixin
+[![npm version](https://badge.fury.io/js/polymer-lit.svg)](https://badge.fury.io/js/polymer-lit)
+[![GitHub license](https://img.shields.io/github/license/adaliszk/polymer-lit.svg?style=flat-square)](https://github.com/adaliszk/polymer-lit/blob/master/LICENSE.md)
+
+# Polymer 3.x Lit-HTML mixin
 Quick mixin for Polymer 3.x which gives your a Mixin for Lit-HTML
+
+## Installation
+
+
+```bash
+yarn add polymer-lit
+```
 
 ## Sample Usage
 
@@ -19,7 +29,7 @@ class MyElement extends Lit(PolymerElement)
         return html`
             <style>:host { display: block; }</style>
             <slot></slot>
-	`;
+        `;
     }
 }
 
