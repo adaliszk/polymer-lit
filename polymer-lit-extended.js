@@ -2,8 +2,8 @@ import { PropertyEffects } from '../@polymer/polymer/lib/mixins/property-effects
 import { PropertyAccessors } from '../@polymer/polymer/lib/mixins/property-accessors.js';
 import { ElementMixin } from '../@polymer/polymer/lib/mixins/element-mixin.js';
 import { dedupingMixin } from '../@polymer/polymer/lib/utils/mixin.js';
-import { render } from '../lit-html/lit-html.js';
-export const Lit = dedupingMixin((Base) => {
+import { render } from '../lit-html/lib/lit-extended.js';
+export const LitExtended = dedupingMixin((Base) => {
     const PolymerElement = PropertyEffects(PropertyAccessors(ElementMixin(Base)));
     return class PolymerLitRenderedElement extends PolymerElement {
         constructor() {
@@ -46,4 +46,4 @@ export const Lit = dedupingMixin((Base) => {
         }
     };
 });
-//# sourceMappingURL=polymer-lit.js.map
+//# sourceMappingURL=polymer-lit-extended.js.map
