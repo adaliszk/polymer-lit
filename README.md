@@ -47,10 +47,10 @@ for the extended version use the `polymer-lit-extended.js`:
 
 ```javascript
 import {Element as PolymerElement} from '/node_modules/@polymer/polymer/polymer-element.js';
-import {Lit} from '/node_modules/polymer-lit/polymer-lit-extended.js';
+import {LitExtended} from '/node_modules/polymer-lit/polymer-lit-extended.js';
 import {html} from '/node_modules/lit-html/lit-html.js';
 
-class MyElement extends Lit(PolymerElement)
+class MyElement extends LitExtended(PolymerElement)
 {
     static get properties() { return {
         // ...
