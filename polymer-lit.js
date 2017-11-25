@@ -25,10 +25,18 @@ export const Lit = dedupingMixin((Base) => {
         _propertiesChanged(propertyName, newValue, preValue) {
             super._propertiesChanged(propertyName, newValue, preValue);
             // Render the lit-html template
-            this._templateResult = this.render();
+            const templateResult = this.render();
             // If succeeded then render it to the shadowRoot
-            if (this._templateResult)
-                render(this._templateResult, this.shadowRoot);
+            if (templateResult)
+                this._render(templateResult);
+        }
+        /**
+         * Render the template to the shadowRoot
+         * @param {TemplateResult} templateResult
+         * @private
+         */
+        _render(templateResult) {
+            render(templateResult, this.shadowRoot);
         }
         /**
          * Just override the base template, we will render it with lit

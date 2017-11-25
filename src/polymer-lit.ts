@@ -10,10 +10,6 @@ import {TemplateResult, render} from '../lit-html/lit-html.js';
 export const Lit = dedupingMixin((Base: Polymer.Element | HTMLElement) => {
     const PolymerElement = PropertyEffects(PropertyAccessors(ElementMixin(Base)));
     return class PolymerLitRenderedElement extends PolymerElement {
-
-        /** @type {TemplateResult} Stored result from the render function */
-        private _templateResult: TemplateResult;
-
         constructor() {
             super();
 
@@ -37,11 +33,19 @@ export const Lit = dedupingMixin((Base: Polymer.Element | HTMLElement) => {
             super._propertiesChanged(propertyName, newValue, preValue);
 
             // Render the lit-html template
-            this._templateResult = this.render();
+            const templateResult: TemplateResult = this.render();
 
             // If succeeded then render it to the shadowRoot
-            if (this._templateResult)
-                render(this._templateResult, this.shadowRoot!);
+            if (templateResult) this._render(templateResult);
+        }
+
+        /**
+         * Render the template to the shadowRoot
+         * @param {TemplateResult} templateResult
+         * @private
+         */
+        private _render(templateResult: TemplateResult) {
+            render(templateResult, this.shadowRoot);
         }
 
         /**

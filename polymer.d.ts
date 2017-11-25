@@ -87,5 +87,5 @@ declare namespace Polymer {
     }
     const ElementMixin: <T extends Constructor<HTMLElement>>(base: T) => T & Constructor<ElementMixin>;
 
-    //const Element = Polymer.ElementMixin(HTMLElement);
+    const Element = Polymer.ElementMixin(HTMLElement);
 }
