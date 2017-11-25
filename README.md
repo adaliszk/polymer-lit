@@ -7,6 +7,7 @@
 [![](https://img.shields.io/github/license/adaliszk/polymer-lit.svg?style=flat-square)](https://github.com/adaliszk/polymer-lit/blob/master/LICENSE.md)
 
 # Polymer Lit-HTML Mixin
+
 Mixin for Polymer which gives you ability to render your element with [lit-html](https://github.com/PolymerLabs/lit-html),
 it's based on the original [polymer-lit](https://github.com/PolymerLabs/polymer-lit) repository, but it's goal to
 work with polymer and not decorate a HTMLElement.
