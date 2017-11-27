@@ -42,27 +42,3 @@ class MyElement extends Lit(PolymerElement)
 
 customElements.define('my-element', MyElement);
 ```
-
-for the extended version use the `polymer-lit-extended.js`:
-
-```javascript
-import {Element as PolymerElement} from '/node_modules/@polymer/polymer/polymer-element.js';
-import {LitExtended} from '/node_modules/polymer-lit/polymer-lit-extended.js';
-import {html} from '/node_modules/lit-html/lit-html.js';
-
-class MyElement extends LitExtended(PolymerElement)
-{
-    static get properties() { return {
-        // ...
-    }};
-
-    render() {
-        return html`
-            <style>:host { display: block; }</style>
-            <slot></slot>
-        `;
-    }
-}
-
-customElements.define('my-element', MyElement);
-```
