@@ -1,3 +1,4 @@
+///<reference path="../types/polymer.d.ts"/>
 import { PropertyEffects } from '../@polymer/polymer/lib/mixins/property-effects.js';
 import { PropertyAccessors } from '../@polymer/polymer/lib/mixins/property-accessors.js';
 import { ElementMixin } from '../@polymer/polymer/lib/mixins/element-mixin.js';
@@ -8,8 +9,8 @@ export const Lit = dedupingMixin((Base) => {
     return class PolymerLitRenderedElement extends PolymerElement {
         constructor() {
             super();
-            // Create the shadow Root
-            this.attachShadow({ mode: "open" });
+            // Initialize ShadowRoot by Polymer
+            this.root = this._attachDom(this.root);
             // Reset the properties state
             this._invalidateProperties();
         }
@@ -36,7 +37,7 @@ export const Lit = dedupingMixin((Base) => {
          * @private
          */
         _render(templateResult) {
-            render(templateResult, this.shadowRoot);
+            render(templateResult, this.shadowRoot || this);
         }
         /**
          * Just override the base template, we will render it with lit

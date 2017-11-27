@@ -1,10 +1,9 @@
-import {Polymer} from '../polymer.d.ts';
+///<reference path="../types/polymer.d.ts"/>
 
 import {PropertyEffects} from '../@polymer/polymer/lib/mixins/property-effects.js';
 import {PropertyAccessors} from '../@polymer/polymer/lib/mixins/property-accessors.js';
 import {ElementMixin} from '../@polymer/polymer/lib/mixins/element-mixin.js';
 import {dedupingMixin} from '../@polymer/polymer/lib/utils/mixin.js';
-
 import {TemplateResult, render} from '../lit-html/lit-html.js';
 
 export const Lit = dedupingMixin((Base: Polymer.Element | HTMLElement) => {
@@ -12,10 +11,8 @@ export const Lit = dedupingMixin((Base: Polymer.Element | HTMLElement) => {
     return class PolymerLitRenderedElement extends PolymerElement {
         constructor() {
             super();
-
-            // Create the shadow Root
-            this.attachShadow({mode: "open"});
-
+            // Initialize ShadowRoot by Polymer
+            this.root = this._attachDom(this.root);
             // Reset the properties state
             this._invalidateProperties();
         }
@@ -45,7 +42,7 @@ export const Lit = dedupingMixin((Base: Polymer.Element | HTMLElement) => {
          * @private
          */
         private _render(templateResult: TemplateResult) {
-            render(templateResult, this.shadowRoot);
+            render(templateResult, this.shadowRoot || this);
         }
 
         /**
