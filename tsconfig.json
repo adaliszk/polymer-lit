@@ -3,11 +3,13 @@
     "target": "es2017",
     "module": "es2015",
     "lib": ["es2017", "dom"],
-    "declaration": true,
-    "sourceMap": true,
     "outDir": "./",
+    "moduleResolution": "node",
+    "baseUrl": "src", // This must be specified if "paths" is.
     "paths": {
-      "../*": ["node_modules/*"]
+      "../*": ["node_modules/*"],
+      "@polymer": ["node_modules/@polymer"],
+      "lit-html": ["node_modules/lit-html"]
     },
     "strict": true,
     "noUnusedLocals": true,

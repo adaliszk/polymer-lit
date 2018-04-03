@@ -1,12 +1,28 @@
-///<reference path="../types/polymer.d.ts"/>
+/**
+ * Copyright (c) 2017 Ádám Liszkai <adaliszk@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ */
+/// <reference path="../types/polymer.d.ts"/>
+/// <reference path="../types/polymer-lit.d.ts" />
 import { PropertyEffects } from '../@polymer/polymer/lib/mixins/property-effects.js';
 import { PropertyAccessors } from '../@polymer/polymer/lib/mixins/property-accessors.js';
 import { ElementMixin } from '../@polymer/polymer/lib/mixins/element-mixin.js';
 import { dedupingMixin } from '../@polymer/polymer/lib/utils/mixin.js';
-import { render } from '../lit-html/lit-html.js';
+import { render } from 'lit-html/lit-html.js';
+// noinspection JSUnusedGlobalSymbols
 export const Lit = dedupingMixin((Base) => {
     const PolymerElement = PropertyEffects(PropertyAccessors(ElementMixin(Base)));
     return class PolymerLitRenderedElement extends PolymerElement {
+        // noinspection JSUnusedGlobalSymbols
         constructor() {
             super();
             // Initialize ShadowRoot by Polymer
@@ -39,6 +55,7 @@ export const Lit = dedupingMixin((Base) => {
         _render(templateResult) {
             render(templateResult, this.shadowRoot || this);
         }
+        // noinspection JSUnusedGlobalSymbols
         /**
          * Just override the base template, we will render it with lit
          * @static
@@ -46,6 +63,7 @@ export const Lit = dedupingMixin((Base) => {
         static get template() {
             return '';
         }
+        // noinspection JSMethodCanBeStatic
         /**
          * Base render function what you have to implement in your class
          * @protected
@@ -55,4 +73,3 @@ export const Lit = dedupingMixin((Base) => {
         }
     };
 });
-//# sourceMappingURL=polymer-lit.js.map

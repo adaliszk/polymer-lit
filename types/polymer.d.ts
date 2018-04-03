@@ -76,6 +76,7 @@ declare namespace Polymer {
     const PropertyEffects: <T extends Constructor<HTMLElement>>(base: T) => T & Constructor<PropertyEffects>;
 
     interface ElementMixin extends PropertyEffects {
+        root: ShadowRoot;
         _initializeProperties();
         connectedCallback();
         disconnectedCallback();
@@ -87,5 +88,7 @@ declare namespace Polymer {
     }
     const ElementMixin: <T extends Constructor<HTMLElement>>(base: T) => T & Constructor<ElementMixin>;
 
-    interface Element extends ElementMixin { }
+    interface Element extends ElementMixin, HTMLElement {
+        new(): Element;
+    }
 }
