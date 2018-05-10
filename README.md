@@ -6,6 +6,10 @@
 [![](https://img.shields.io/github/stars/adaliszk/polymer-lit.svg?style=flat-square)](https://github.com/adaliszk/polymer-lit/stargazers)
 [![](https://img.shields.io/github/license/adaliszk/polymer-lit.svg?style=flat-square)](https://github.com/adaliszk/polymer-lit/blob/master/LICENSE.md)
 
+> DEPRECATED: Since the orignial LitElement now works as the alternative to the
+> Polymer base class, I won't continue this Mixin which does the same :)
+> Please use the https://github.com/Polymer/lit-element in your projects!
+
 # Polymer Lit-HTML Mixin
 
 Mixin for  Polymer  which  gives  you  ability  to  render  your  element  with
