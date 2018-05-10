@@ -1,6 +1,6 @@
 {
   "name": "polymer-lit",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Simple mixin for Polymer giving access to Lit-HTML",
   "keywords": [
     "polymer",
